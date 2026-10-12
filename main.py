@@ -8,4 +8,4 @@ window = Window(
     DoomFire(500, 500, 50, 50)
 )
 
-window.start()
+window.start(15)

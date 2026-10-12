@@ -12,7 +12,7 @@ class Window:
         pygame.display.set_caption("My Grid")
 
 
-    def start(self):
+    def start(self, fps):
         exit = False
         clock = pygame.time.Clock()
         while not exit:
@@ -23,4 +23,4 @@ class Window:
             self.grid.update()
             self.grid.draw(self.screen, self.padding)
             pygame.display.update()
-            clock.tick(10)
+            clock.tick(fps)
