@@ -4,12 +4,12 @@ from Box import Box
 
 class Grid:
 
-    def valueToColor(self, value):
+    def valueToColour(self, value):
         return(0, 0, 0)
 
     def draw(self, screen, padding):
         for box in self.boxes:
-            box.colour = self.valueToColor(self.values[box.x//box.width][box.y//box.height])
+            box.colour = self.valueToColour(self.values[box.x//box.width][box.y//box.height])
             box.draw(screen, padding)
 
     def update(self):

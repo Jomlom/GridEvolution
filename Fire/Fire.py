@@ -5,7 +5,7 @@ class Fire(Grid):
     def __init__(self, width, height, rows, cols):
         Grid.__init__(self, width, height, rows, cols)
 
-    def valueToColor(self, value):
+    def valueToColour(self, value):
         return (value*7, value*7, value*7)
 
     def setup(self):
