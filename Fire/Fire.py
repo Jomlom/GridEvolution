@@ -1,7 +1,5 @@
 from random import randint
-
 from Grid import Grid
-
 
 class Fire(Grid):
     def __init__(self, width, height, rows, cols):
