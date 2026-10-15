@@ -37,6 +37,6 @@ class RainWater(Water):
                 if randint(1, 2000) == 1:
                     for i2 in range(len(self.values)):
                         for j2 in range(len(self.values[i])):
-                            newvalues[i2][j2] += 100 * numpy.exp(-((i2 - i) ** 2 + (j2 - j) ** 2) / randint(2,8))
+                            newvalues[i2][j2] -= 100 * numpy.exp(-((i2 - i) ** 2 + (j2 - j) ** 2) / randint(2,8))
         self.lastvalues = self.values.copy()
         self.values = newvalues.copy()

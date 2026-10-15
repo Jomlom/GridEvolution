@@ -17,7 +17,7 @@ class Water(Grid):
         for box in self.boxes:
             i, j = box.x//box.width, box.y//box.height
             slope = v[min(i+1, self.cols-1)][j] - v[max(i-1, 0)][j] + v[i][min(j+1, self.rows-1)] - v[i][max(j-1, 0)]
-            box.colour = self.valueToColour(6*slope)
+            box.colour = self.valueToColour(50 + 5*slope + 0.3*v[i][j])
             box.draw(screen, padding)
 
     def setup(self):
