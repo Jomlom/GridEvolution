@@ -10,7 +10,14 @@ class ImageHelper:
     @staticmethod
     def prepareImage(path, gridsize, wiggleroom):
         img = Image.open(path).convert("RGB")
-        small = img.resize((gridsize[0]+2*wiggleroom, gridsize[1]+2*wiggleroom), Image.Resampling.BOX)
-        quantized = small.quantize(colors=32).convert("RGB")
-        quantized.save("current.png", "PNG")
-        return np.asarray(quantized)
+        quantized = img.quantize(colors=48).convert("RGB")
+        scale = min(quantized.size[0] / (gridsize[0]+2*wiggleroom), quantized.size[1] / (gridsize[1]+2*wiggleroom))
+        newsize = ((gridsize[0]+2*wiggleroom)*scale, (gridsize[1]+2*wiggleroom)*scale)
+        cropped = quantized.crop((
+            (quantized.size[0]-newsize[0])/2,
+            (quantized.size[1]-newsize[1])/2,
+            newsize[0]+(quantized.size[0]-newsize[0])/2,
+            newsize[1]+(quantized.size[1]-newsize[1])/2))
+        small = cropped.resize((gridsize[0]+2*wiggleroom, gridsize[1]+2*wiggleroom), Image.Resampling.BOX)
+        small.save("current.png", "PNG")
+        return np.asarray(small)
