@@ -6,7 +6,7 @@ class Window:
         pygame.init()
         self.padding = 50
         self.grid = grid
-        self.screen = pygame.display.set_mode((grid.width + self.padding*2, grid.width + self.padding*2))
+        self.screen = pygame.display.set_mode((grid.width + self.padding*2, grid.height + self.padding*2))
         self.colour = (0, 0, 0)
 
         pygame.display.set_caption("My Grid")

@@ -24,7 +24,7 @@ class Grid:
         self.height = height
         self.rows = rows
         self.cols = cols
-        self.values = [[0 for _ in range(cols)] for _ in range(rows)]
+        self.values = [[0 for _ in range(rows)] for _ in range(cols)]
 
         boxheight = height // rows
         boxwidth = width // cols

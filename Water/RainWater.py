@@ -16,7 +16,7 @@ class RainWater(Water):
         self.lastvalues = self.values.copy()
 
     def update(self):
-        newvalues = [[0 for _ in range(len(self.values))] for _ in range(len(self.values[0]))]
+        newvalues = [[0 for _ in range(len(self.values[0]))] for _ in range(len(self.values))]
         for i in range(len(self.values)):
             for j in range(len(self.values[i])):
                 neighbours = 0
